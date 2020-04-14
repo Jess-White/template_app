@@ -1,0 +1,10 @@
+{
+  id: letter.id,
+  user_id: letter.user_id,
+  title: letter.title,
+  section_opener: letter.section_opener,
+  section_body: letter.section_body,
+  section_closer: letter.section_closer,
+  created_at: letter.created_at,
+  updated_at: letter.updated_at
+}
