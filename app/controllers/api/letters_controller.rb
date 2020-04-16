@@ -1,6 +1,6 @@
 class Api::LettersController < ApplicationController
 
-  before_action : authenticate_user
+  # before_action :authenticate_user
 
   def index
     @letters = Letter.all
@@ -22,13 +22,14 @@ class Api::LettersController < ApplicationController
     else
       render json: {errors: @letter.errors.messages}, status: :unprocessable_entity
     end 
+  end 
 
-    def show
+  def show
       @letter = Letter.find(params[:id])
       render 'show.json.jb'
-    end 
+  end 
 
-    def update
+  def update
       @letter = Letter.find(params[:id])
 
       @letter.user_id = params[:user_id] || letter.user_id
@@ -39,13 +40,13 @@ class Api::LettersController < ApplicationController
 
       @letter.save
       render 'show.json.jb'
-    end 
+  end 
 
-    def destroy
+  def destroy
       letter = Letter.find(params[:id])
       letter.destroy
       render json: {message: "Letter successfully destroyed"}
-    end 
+  end 
 end
 
 

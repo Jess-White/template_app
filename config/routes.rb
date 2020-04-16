@@ -14,4 +14,5 @@ Rails.application.routes.draw do
     get '/letters/:id' => 'letters#show'
     patch '/letters/:id' => 'letters#update'
     delete '/letters/:id' => 'letters#destroy'
+  end 
 end

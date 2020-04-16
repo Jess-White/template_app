@@ -1,5 +1,12 @@
 class Api::UsersController < ApplicationController
 
+  def index
+    @users = User.all
+    @users = @users.order(id: :asc)
+
+    render 'index.json.jb'
+  end 
+
   def create
     user = User.new(
       first_name: params[:first_name],
