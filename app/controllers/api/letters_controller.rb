@@ -1,6 +1,5 @@
 class Api::LettersController < ApplicationController
-
-  # before_action :authenticate_user
+ # before_action :authenticate_user
 
   def index
     @letters = Letter.all
@@ -32,11 +31,11 @@ class Api::LettersController < ApplicationController
   def update
       @letter = Letter.find(params[:id])
 
-      @letter.user_id = params[:user_id] || letter.user_id
-      @letter.title = params[:title] || letter.title
-      @letter.section_opener = params[:section_opener] || letter.section_opener
-      @letter.section_body = params[:section_body] || letter.section_body
-      @letter.section_closer = params[:section_closer] || letter.section_closer
+      @letter.user_id = params[:user_id] || @letter.user_id
+      @letter.title = params[:title] || @letter.title
+      @letter.section_opener = params[:section_opener] || @letter.section_opener
+      @letter.section_body = params[:section_body] || @letter.section_body
+      @letter.section_closer = params[:section_closer] || @letter.section_closer
 
       @letter.save
       render 'show.json.jb'
