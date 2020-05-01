@@ -10,7 +10,7 @@ class Api::LettersController < ApplicationController
 
   def create
     @letter = Letter.new(
-                          user_id: params[:user_id],
+                          user_id: current_user.id,
                           title: params[:title],
                           section_opener: params[:section_opener],
                           section_body: params[:section_body],
